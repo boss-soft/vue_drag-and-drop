@@ -16,7 +16,6 @@ export default defineComponent({
     onMounted(() => {
       const localStorage = window.localStorage;
       const store = localStorage.getItem('store');
-      console.log('  >>> store = ', store, 'typeof store = ', typeof store);
       if (store && store != '{}') {
         cellStore.setAllStore(store);
       } else {
