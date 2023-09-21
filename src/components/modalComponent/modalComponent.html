@@ -1,0 +1,51 @@
+<!--// src/components/modalComponent/modalComponent.html-->
+
+<div class="modal">
+    <div class="borderBottom">
+        <div class="close" @click="closeModal"></div>
+        <img
+                :alt="name"
+                :src="src"
+        />
+    </div>
+    <div style="overflow: clip">
+        <div class="field"></div>
+        <div class="text">
+            Также как высококачественный прототип будущего проекта не даёт нам иного выбора, кроме определения
+            стандартных подходов. Повседневная практика показывает, что разбавленное изрядной долей эмпатии,
+            рациональное мышление требует определения и уточнения экономической целесообразности принимаемых
+            решений!
+
+            Прежде всего, перспективное планирование требует от нас анализа экспериментов, поражающих по своей
+            масштабности и грандиозности. Есть над чем задуматься: стремящиеся вытеснить традиционное производство,
+            нанотехнологии своевременно верифицированы. Следует отметить, что синтетическое тестирование играет
+            определяющее значение для системы массового участия.
+        </div>
+    </div>
+    <div class="borderTop">
+        <button v-if="!showDialog" class="redBtn" @click="showDelete">
+            Удалить предмет
+        </button>
+        <template v-else>
+            <div>
+                <input
+                        v-model="modelCountToDelete"
+                        :max="count"
+                        class="inputNumber"
+                        min="1"
+                        placeholder='Введите количество'
+                        type="number"
+                        @input="compareModelToMinMax"
+                >
+            </div>
+            <div class="btnBlock">
+                <button class="whiteBtn" @click="showDelete">
+                    Отмена
+                </button>
+                <button class="redBtn" @click="deleteFromStore">
+                    Подтвердить
+                </button>
+            </div>
+        </template>
+    </div>
+</div>

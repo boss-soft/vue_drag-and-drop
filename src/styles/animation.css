@@ -1,0 +1,13 @@
+.slide-right-enter-active, .slide-right-leave-active {
+  transition: transform 1s;
+}
+
+.slide-right-enter-from, .slide-right-leave-to {
+  transform: translateX(100%);
+}
+
+.modal-enter-from {
+  transform: translateX(0);
+}
+
+/*# sourceMappingURL=animation.css.map */

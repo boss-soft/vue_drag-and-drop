@@ -1,0 +1,50 @@
+<!--// src/components/mainComponent/mainComponent.html-->
+<div class="container">
+
+    <div class="top">
+
+        <div class="left">
+
+            <img alt="picture" height="240" src="../../assets/ImgBlur.png" width="208"
+                 @click="resetStore"
+            />
+            <div class="field"></div>
+            <div class="text">
+                Не следует, однако, забывать о том, что повышение уровня гражданского сознания требует от нас
+                системного
+                анализа дальнейших направлений развития проекта? Соображения высшего порядка, а также курс на
+                социально-ориентированный национальный проект требует определения и уточнения системы масштабного
+                изменения ряда параметров. Практический опыт показывает, что рамки и место обучения кадров
+                способствует
+                повышению актуальности дальнейших направлений развития проекта.
+            </div>
+
+        </div>
+
+        <div class="right">
+            <div v-for="n in 25" :id="n" :key="n" class="cellInTable"
+                 @dragover="handleDragOver(n-1)"
+                 @dragover.prevent
+            >
+                <template v-if="cellStore.values[n-1] !== undefined">
+                    <cell-component :cellId="n-1" class="draggable" draggable="true"
+                                    @click="showHideModal(n-1)"
+                                    @dragend="handleDrop"
+                                    @dragstart="handleDragStart(n-1)"
+                    />
+                </template>
+                <template v-else>
+                </template>
+            </div>
+            <Transition name="slide-fade">
+                <modal-component v-if="numberModal.show !== null"/>
+            </Transition>
+
+        </div>
+    </div>
+    <div class="bottom">
+        <div class="field"></div>
+        <div class="close"></div>
+    </div>
+
+</div>

@@ -1,0 +1,73 @@
+// src/styles/modal.scss
+
+.modal {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 300px;
+  padding: 20px;
+  box-sizing: border-box;
+
+  background: rgba($formBackColor, 0.7);
+  backdrop-filter: blur(5px);
+  border: 1px solid $borderColor;
+
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+
+  img {
+    width: 150px;
+    height: 150px;
+    padding: 50px 50px 20px;
+  }
+
+  .text {
+    @extend .text;
+    width: 250px !important;
+  }
+
+}
+
+.borderBottom {
+  border-bottom: 1px solid $borderColor;
+}
+
+.borderTop {
+  border-top: 1px solid $borderColor;
+  padding-top: 20px;
+}
+
+.widthHeightRadius {
+  width: 100%;
+  height: 50px;
+  border-radius: $borderRadius;
+}
+
+.redBtn {
+  @extend .widthHeightRadius;
+  background-color: $redButtonColor;
+  color: white;
+}
+
+.whiteBtn {
+  @extend .widthHeightRadius;
+  background-color: white;
+  color: black;
+  margin-right: 5px;
+}
+
+.inputNumber {
+  @extend .widthHeightRadius;
+  background-color: $backColor;
+  color: white;
+  width: 230px !important;
+  padding-left: 20px;
+}
+
+.btnBlock {
+  padding-top: 20px;
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 5px;
+}
